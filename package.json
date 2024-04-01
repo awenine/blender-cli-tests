@@ -1,0 +1,28 @@
+{
+  "name": "blender-cli-tests",
+  "version": "1.0.0",
+  "description": "test repo for adjusting blender files through npm / BASH scripts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "render-test": "'C:\\Program Files\\Blender Foundation\\Blender 4.0\blender-launcher.exe' -b blendProjects/basic-shape-scene.blend -o //render_ -F JPEG",
+    "render-again": "cd ~/../../\"Program Files/Blender Foundation/Blender 4.0/\"",
+    "path-test": "cd ../../../\"Program Files\"/\"Blender Foundation\"/\"Blender 4.0\"/ && blender -b ../../../../CodeRepos/blender-cli-renders/blendProjects/basic-shape-scene.blend -o //render_ -F JPEG",
+    "path-test-2": "blender -b blendProjects/basic-shape-scene.blend -o //renders/basic_render_ -f 1",
+    "script-test-2": "blender -b blendProjects/basic-shape-scene.blend -P scripts/messUpCube.py -o //../renders/script_render_2 -f 1",
+    "script-test-param": "blender -b blendProjects/basic-shape-scene.blend -P scripts/messUpCube.py -o //../renders/%npm_config_filename%-%npm_config_date% -f 1",
+    "sub-script": "npm run script-test-param --filename=mess --date=%bash testscript.sh%",
+    "date-test": "echo %bash testscript.sh%",
+    "node-test": "node renderBlenderWithDate scripts/changeColour.py 0.7 0.1 0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awenine/blender-cli-tests.git"
+  },
+  "author": "Christopher Owen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/awenine/blender-cli-tests/issues"
+  },
+  "homepage": "https://github.com/awenine/blender-cli-tests#readme"
+}
